@@ -1,0 +1,110 @@
+{
+  "es": {
+    "nav": {
+      "benefits": "Beneficios",
+      "services": "Servicios",
+      "process": "Proceso",
+      "cta": "Solicita nuestros servicios",
+      "lang": "ES"
+    },
+    "hero": {
+      "title_strong": "Automatizá procesos/",
+      "title_light": "Liderá el mercado",
+      "subtitle": "Transformá tu negocio con la automatización de procesos,\ncon automatizaciones IA que trabajan por ti.",
+      "cta": "Solicita nuestros servicios"
+    },
+    "benefits": {
+      "title": "Beneficios",
+      "subtitleTitle": "Optimiza, Acelera y Automatiza",
+      "subtitleDescription": "Reduce los costes operativos y elimina tareas repetitivas con soluciones inteligentes que mejoran la eficiencia y la precisión en cada proceso.",
+      "items": [
+        {
+          "title": "Reducción del Trabajo Manual",
+          "description": "Automatizá tareas repetitivas y ahorrá tiempo. Desde respuestas a clientes hasta documentos: la IA se encarga, tu equipo se enfoca en lo importante."
+        },
+        {
+          "title": "Mayor Velocidad Operativa",
+          "description": "Respuestas en segundos, decisiones en tiempo real. Eliminá cuellos de botella con flujos automatizados y agentes que trabajan 24/7."
+        },
+        {
+          "title": "Menos Errores Humanos",
+          "description": "Toma de decisiones más precisa y estandarizada. Automatizar significa menos fallos, menos retrabajos y más calidad en cada proceso."
+        }
+      ]
+    },
+    "services": {
+      "title": "Servicios",
+      "introTitle": "Descubre el poder de la IA",
+      "introDescription": "Texto placeholder: descubre cómo Qiu Automations puede transformar tus procesos con soluciones que optimizan, aceleran y automatizan tus operaciones.",
+      "items": [
+        {
+          "title": "Automatización de Leads",
+          "description": "Placeholder: calificación de leads, seguimiento y agendado con agentes de IA para aumentar la conversión sin fricción."
+        },
+        {
+          "title": "Automatización de Base de Conocimientos",
+          "description": "Placeholder: agentes RAG que extraen respuestas en tiempo real desde manuales, SOPs y FAQs con precisión."
+        },
+        {
+          "title": "Asistentes para Atención al Cliente",
+          "description": "Placeholder: soporte 24/7 con bots contextuales que resuelven dudas y escalan cuando hace falta."
+        }
+      ],
+      "cta": "Solicita nuestros servicios"
+    }
+  },
+  "en": {
+    "nav": {
+      "benefits": "Benefits",
+      "services": "Services",
+      "process": "Process",
+      "cta": "Request our services",
+      "lang": "EN"
+    },
+    "hero": {
+      "title_strong": "Automate processes/",
+      "title_light": "Lead the market",
+      "subtitle": "Transform your business with process automation,\nwith AI automations that work for you.",
+      "cta": "Request our services"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "subtitleTitle": "Optimize, Accelerate and Automate",
+      "subtitleDescription": "Reduce operational costs and remove repetitive tasks with intelligent solutions that improve efficiency and accuracy across every process.",
+      "items": [
+        {
+          "title": "Reduced Manual Work",
+          "description": "Automate repetitive tasks and save time. From customer replies to documents: AI handles it so your team can focus on what matters."
+        },
+        {
+          "title": "Higher Operational Speed",
+          "description": "Answers in seconds and real‑time decisions. Remove bottlenecks with automated flows and agents that work 24/7."
+        },
+        {
+          "title": "Fewer Human Errors",
+          "description": "More accurate, standardized decisions. Automation means fewer mistakes, less rework, and higher quality in every process."
+        }
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "introTitle": "Unleash AI Power",
+      "introDescription": "Placeholder text: discover how Qiu Automations can transform your operations with solutions that optimize, accelerate and automate your processes.",
+      "items": [
+        {
+          "title": "Lead Automation",
+          "description": "Placeholder: lead scoring, follow-ups and scheduling with AI agents to lift conversion without friction."
+        },
+        {
+          "title": "Knowledge Base Automation",
+          "description": "Placeholder: RAG agents that extract precise answers from manuals, SOPs and FAQs in real time."
+        },
+        {
+          "title": "Customer Support Assistants",
+          "description": "Placeholder: 24/7 contextual bots that resolve queries and escalate when needed."
+        }
+      ],
+      "cta": "Request our services"
+    }
+  }
+}

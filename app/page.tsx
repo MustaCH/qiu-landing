@@ -1,103 +1,107 @@
-import Image from "next/image";
+"use client";
+
+import { useI18n } from "../lib/LanguageProvider";
+import BenefitCard from "../components/BenefitCard";
+import PixelBlast from "../components/PixelBlast";
+import Aurora from "../components/Aurora.jsx";
+import ServiceCard from "../components/ServiceCard";
 
 export default function Home() {
+  const { dict } = useI18n();
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div>
+      <main className="h-screen w-full flex flex-col items-center justify-center">
+        <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center text-white">
+          <h2 className="text-8xl font-bold">Qiu.</h2>
+          <h1 className="text-3xl md:text-4xl font-semibold text-center">{dict.hero.title_strong}<span className="font-thin">{dict.hero.title_light}</span></h1>
+          <p className="text-sm md:text-xl text-center" dangerouslySetInnerHTML={{ __html: dict.hero.subtitle.replace(/\n/g, '<br />') }} />
+          <button
+            className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {dict.hero.cta}
+          </button>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      <section id="beneficios" className="relative min-h-screen w-full pt-24 pb-12 bg-gradient-to-t from-black via-black to-transparent overflow-hidden">
+        <div className="relative container mx-auto p-6 border-2 border-[#7dd3fc]/40 bg-gradient-to-t from-black via-black to-transparent rounded-2xl overflow-hidden">
+          {/* Fondo PixelBlast dentro del contenedor */}
+          <div className="pointer-events-none absolute inset-0 z-0">
+            <PixelBlast
+              className="opacity-100"
+              color="#7dd3fc"
+              variant="circle"
+              pixelSize={5}
+              patternScale={4}
+              patternDensity={1}
+              enableRipples={false}
+              edgeFade={0.5}
+              transparent={true}
+              speed={0.5}
+              style={{}}
+            />
+          </div>
+          {/* Glow del borde */}
+          <div
+            className="pointer-events-none absolute inset-0 rounded-2xl z-[5]"
+            style={{
+              boxShadow:
+                "0 0 30px 6px rgba(125, 211, 252, 0.25), inset 0 0 20px 2px rgba(125, 211, 252, 0.35)",
+              border: "1px solid rgba(125, 211, 252, 0.45)",
+            }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-24">
+            <h2
+              className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
+              style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
+            >
+              {dict.benefits.title}
+            </h2>
+            <p className="text-4xl text-center text-white">{dict.benefits?.subtitleTitle ?? ""}</p>
+            <p className="text-xl text-center text-white">{dict.benefits?.subtitleDescription ?? ""}</p>
+          </div>
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {dict.benefits.items.map((b, i) => (
+              <BenefitCard
+                key={i}
+                title={b.title}
+                description={b.description}
+                spotlightColor="rgba(0, 229, 255, 0.2)"
+                className="backdrop-blur-sm/0 bg-black/20 border-2 border-[#7dd3fc]"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="servicios" className="relative min-h-screen w-full py-24 flex justify-center items-center bg-black overflow-hidden">
+        <div className="absolute top-[-10rem] h-[65rem] z-20 w-full bg-radial from-cyan-500/50 via-transparent to-transparent rounded-full animate-[pulse_6s_ease-in-out_infinite]"/>
+        <div className="absolute top-[-12px] z-10 w-full h-32 bg-black"/>
+        <div className="relative z-50  container px-6 flex flex-col items-center justify-center gap-6">
+          <div className="relative z-30 flex flex-col gap-6 items-center justify-center mb-24 rounded-2xl p-6 ">
+            <h2
+              className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
+              style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
+            >
+            {dict.services?.title}
+          </h2>
+          <p className="text-3xl font-semibold text-white text-center">{dict.services?.introTitle ?? ""}</p>
+          <p className="text-xl text-center text-white">{dict.services?.introDescription ?? ""}</p>
+            {/* Grid de servicios */}
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
+              {(dict.services?.items ?? []).map((s: any, i: number) => (
+                <ServiceCard
+                  key={i}
+                  title={s.title}
+                  description={s.description}
+                  spotlightColor="rgba(0, 229, 255, 0.2)"
+                />
+              ))}
+            </div>
+            <div className="mt-12">
+              <button className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.services?.cta}</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
