@@ -53,25 +53,24 @@
       "cta": "Solicita nuestros servicios"
     },
     "process": {
-      "title": "Proceso",
+      "title": "Nuestro Proceso",
       "introTitle": "Metodología clara, resultados seguros",
       "introDescription": "Trabajamos con un proceso probado que garantiza orden, transparencia y entregas efectivas en cada proyecto.",
       "items": [
         {
           "title": "Planificación",
+          "img": "/assets/mind.png",
           "description": "Relevamos necesidades, definimos objetivos y diseñamos una hoja de ruta para la implementación."
         },
         {
-          "title": "Diseño",
+          "title": "Desarrollo",
+          "img": "/assets/laptop.png",
           "description": "Armamos la arquitectura y los flujos con un enfoque centrado en la experiencia del usuario."
         },
         {
           "title": "Implementación",
+          "img": "/assets/file.png",
           "description": "Desarrollo, pruebas y puesta en marcha de las automatizaciones en entornos productivos."
-        },
-        {
-          "title": "Mantenimiento",
-          "description": "Monitoreo constante, ajustes y mejoras continuas para mantener la eficiencia y escalar cuando sea necesario."
         }
       ],
       "cta": "Solicita nuestros servicios"

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <main className="h-screen w-full flex flex-col items-center justify-center">
-        <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center text-white">
+        <div className="flex flex-col max-w-2xl gap-[32px] row-start-2 items-center justify-center text-white">
           <img className="w-64" src="/Isologotipoblanco.svg" alt="Isotipo" />
           <h1 className="text-3xl md:text-4xl font-semibold text-center">{dict.hero.title_strong}<span className="font-thin">{dict.hero.title_light}</span></h1>
           <p className="text-sm md:text-xl text-center" dangerouslySetInnerHTML={{ __html: dict.hero.subtitle.replace(/\n/g, '<br />') }} />
@@ -49,7 +49,7 @@ export default function Home() {
               border: "1px solid rgba(125, 211, 252, 0.45)",
             }}
           />
-          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-24">
+          <div className="relative max-w-2xl mx-auto z-10 flex flex-col gap-6 items-center justify-center mb-24">
             <h2
               className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
@@ -77,14 +77,16 @@ export default function Home() {
         <div className="absolute top-[-12px] z-10 w-full h-32 bg-black"/>
         <div className="relative z-50  container px-6 flex flex-col items-center justify-center gap-6">
           <div className="relative z-30 flex flex-col gap-6 items-center justify-center mb-8 rounded-2xl p-6 ">
-            <h2
-              className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
-              style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
-            >
-            {dict.services?.title}
-          </h2>
-          <p className="text-3xl font-semibold text-white text-center">{dict.services?.introTitle ?? ""}</p>
-          <p className="text-xl text-center text-white">{dict.services?.introDescription ?? ""}</p>
+            <div className="flex flex-col items-center justify-center gap-6 max-w-2xl mx-auto">
+              <h2
+                className="relative w-fit text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
+                style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
+              >
+              {dict.services?.title}
+            </h2>
+            <p className="text-3xl font-semibold text-white text-center">{dict.services?.introTitle ?? ""}</p>
+            <p className="text-xl text-center text-white">{dict.services?.introDescription ?? ""}</p>
+            </div>
             {/* Grid de servicios */}
             <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-3 w-full">
               {(dict.services?.items ?? []).map((s: any, i: number) => (
@@ -123,7 +125,7 @@ export default function Home() {
           </div>
         <div className="relative container mx-auto p-6 rounded-2xl">
           {/* Encabezado */}
-          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-4">
+          <div className="relative max-w-2xl mx-auto z-10 flex flex-col gap-6 items-center justify-center mb-4">
             <h2
               className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
@@ -152,8 +154,11 @@ export default function Home() {
               <Step
                 key={i}
               >
-                <h2 className="text-white text-3xl font-bold">{b.title}</h2>
-                <p className="text-white text-lg">{b.description}</p>
+                <div className="h-36">
+                  <h2 className="relative text-white text-3xl font-bold z-10">{b.title}</h2>
+                  <img className="absolute top-0 right-6 w-36 h-36 z-10 opacity-25" src={b.img} alt={b.title} />
+                  <p className="relative text-white text-lg z-10">{b.description}</p>
+                </div>
               </Step>
             ))}
             </Stepper>

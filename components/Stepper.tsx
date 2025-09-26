@@ -125,7 +125,7 @@ export default function Stepper({
         </StepContentWrapper>
 
         {!isCompleted && (
-          <div className={`px-8 pb-8 ${footerClassName}`}>
+          <div className={`relative z-0 px-8 pb-8 ${footerClassName}`}>
             <div className={`mt-10 flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}>
               {currentStep !== 1 && (
                 <button
@@ -241,7 +241,7 @@ interface StepProps {
 }
 
 export function Step({ children }: StepProps) {
-  return <div className="px-8">{children}</div>;
+  return <div className="px-8 relative">{children}</div>;
 }
 
 interface StepIndicatorProps {
