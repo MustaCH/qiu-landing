@@ -5,6 +5,7 @@ import BenefitCard from "../components/BenefitCard";
 import PixelBlast from "../components/PixelBlast";
 import ServiceCard from "../components/ServiceCard";
 import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
+import Stepper, { Step } from "@/components/Stepper";
 
 export default function Home() {
   const { dict } = useI18n();
@@ -101,18 +102,66 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="bg-gradient-to-b from-black to-transparent h-24"/>
-      <section id="proceso" className="relative min-h-screen w-full py-12 flex justify-center items-center bg-transparent overflow-hidden">
-        <div className="relative container mx-auto p-6 rounded-2xl overflow-hidden">
-          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-24">
+      <section
+        id="proceso"
+        className="relative w-full py-12 flex justify-center items-center bg-black"
+      >
+        <div className="pointer-events-none absolute inset-0 z-0">
+            <PixelBlast
+              className="opacity-100"
+              color="#7dd3fc"
+              variant="circle"
+              pixelSize={6} 
+              patternScale={4} 
+              patternDensity={1} 
+              enableRipples={false}
+              edgeFade={0.65}
+              transparent={true}
+              speed={0.2}
+              style={{}}
+            />
+          </div>
+        <div className="relative container mx-auto p-6 rounded-2xl">
+          {/* Encabezado */}
+          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-4">
             <h2
               className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
             >
               Nuestro proceso
             </h2>
-            <p className="text-4xl text-center text-white">Un Método Probado para Resultados Garantizados</p>
-            <p className="text-xl text-center text-white">Nuestro proceso de desarrollo de software es un proceso iterativo que implica la planificación, diseño, implementación y mantenimiento de software.</p>
+            <p className="text-4xl text-center text-white">
+              Un Método Probado para Resultados Garantizados
+            </p>
+            <p className="text-xl text-center text-white">
+              Nuestro proceso de desarrollo de software es un proceso iterativo que
+              implica la planificación, diseño, implementación y mantenimiento de software.
+            </p>
+          </div>
+          <div>
+            <Stepper
+              initialStep={1}
+              onStepChange={(step) => {
+                console.log(step);
+              }}
+              onFinalStepCompleted={() => console.log("All steps completed!")}
+              backButtonText="Anterior"
+              nextButtonText="Siguiente"
+              stepCircleContainerClassName="bg-black"
+            >
+              <Step>
+                <h2 className="text-white text-3xl font-bold">1. Descubrimiento</h2>
+                <p className="text-white text-lg">Analizamos tu negocio para detectar oportunidades reales de automatización.</p>
+              </Step>
+              <Step>
+                <h2 className="text-white text-3xl font-bold">2. Desarrollo</h2>
+                <p className="text-white text-lg">Desarrollamos e implementamos soluciones con IA adaptadas a tus procesos.</p>
+              </Step>
+              <Step>
+                <h2 className="text-white text-3xl font-bold">3. Implementación</h2>
+                <p className="text-white text-lg">Implementamos la solución en tu entorno de trabajo.</p>
+              </Step>
+            </Stepper>
           </div>
         </div>
       </section>
