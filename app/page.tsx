@@ -128,14 +128,13 @@ export default function Home() {
               className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
             >
-              Nuestro proceso
+              {dict.process.title}
             </h2>
             <p className="text-4xl text-center text-white">
-              Un Método Probado para Resultados Garantizados
+              {dict.process.introTitle}
             </p>
             <p className="text-xl text-center text-white">
-              Nuestro proceso de desarrollo de software es un proceso iterativo que
-              implica la planificación, diseño, implementación y mantenimiento de software.
+              {dict.process.introDescription}
             </p>
           </div>
           <div>
@@ -149,18 +148,14 @@ export default function Home() {
               nextButtonText="Siguiente"
               stepCircleContainerClassName="bg-black"
             >
-              <Step>
-                <h2 className="text-white text-3xl font-bold">1. Descubrimiento</h2>
-                <p className="text-white text-lg">Analizamos tu negocio para detectar oportunidades reales de automatización.</p>
+               {dict.process.items.map((b, i) => (
+              <Step
+                key={i}
+              >
+                <h2 className="text-white text-3xl font-bold">{b.title}</h2>
+                <p className="text-white text-lg">{b.description}</p>
               </Step>
-              <Step>
-                <h2 className="text-white text-3xl font-bold">2. Desarrollo</h2>
-                <p className="text-white text-lg">Desarrollamos e implementamos soluciones con IA adaptadas a tus procesos.</p>
-              </Step>
-              <Step>
-                <h2 className="text-white text-3xl font-bold">3. Implementación</h2>
-                <p className="text-white text-lg">Implementamos la solución en tu entorno de trabajo.</p>
-              </Step>
+            ))}
             </Stepper>
           </div>
         </div>

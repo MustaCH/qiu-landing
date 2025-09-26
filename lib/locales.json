@@ -8,46 +8,70 @@
       "lang": "ES"
     },
     "hero": {
-      "title_strong": "Automatizá procesos/",
-      "title_light": "Liderá el mercado",
-      "subtitle": "Transformá tu negocio con la automatización de procesos,\ncon automatizaciones IA que trabajan por ti.",
+      "title_strong": "Automatizá tus procesos/",
+      "title_light": "Potenciá tu negocio",
+      "subtitle": "Lleva tu empresa al siguiente nivel con automatizaciones basadas en IA que trabajan por vos y liberan tiempo de tu equipo.",
       "cta": "Solicita nuestros servicios"
     },
     "benefits": {
       "title": "Beneficios",
-      "subtitleTitle": "Optimiza, Acelera y Automatiza",
-      "subtitleDescription": "Reduce los costes operativos y elimina tareas repetitivas con soluciones inteligentes que mejoran la eficiencia y la precisión en cada proceso.",
+      "subtitleTitle": "Eficiencia, Escalabilidad y Precisión",
+      "subtitleDescription": "Disminuí costos, eliminá tareas manuales y mejorá la productividad con soluciones inteligentes que optimizan cada etapa de tu operación.",
       "items": [
         {
-          "title": "Reducción del Trabajo Manual",
-          "description": "Automatizá tareas repetitivas y ahorrá tiempo. Desde respuestas a clientes hasta documentos: la IA se encarga, tu equipo se enfoca en lo importante."
+          "title": "Menos Carga Operativa",
+          "description": "Delegá lo repetitivo en la IA: desde responder mensajes hasta organizar documentos. Tu equipo se concentra en lo estratégico."
         },
         {
-          "title": "Mayor Velocidad Operativa",
-          "description": "Respuestas en segundos, decisiones en tiempo real. Eliminá cuellos de botella con flujos automatizados y agentes que trabajan 24/7."
+          "title": "Velocidad en los Procesos",
+          "description": "Decisiones al instante y flujos que no se detienen. Automatizaciones que eliminan cuellos de botella y funcionan 24/7."
         },
         {
-          "title": "Menos Errores Humanos",
-          "description": "Toma de decisiones más precisa y estandarizada. Automatizar significa menos fallos, menos retrabajos y más calidad en cada proceso."
+          "title": "Mayor Exactitud",
+          "description": "Reducí errores humanos y aumentá la calidad de cada entrega. Procesos estandarizados y confiables para mejores resultados."
         }
       ]
     },
     "services": {
       "title": "Servicios",
-      "introTitle": "Descubre el poder de la IA",
-      "introDescription": "Texto placeholder: descubre cómo Qiu Automations puede transformar tus procesos con soluciones que optimizan, aceleran y automatizan tus operaciones.",
+      "introTitle": "Explorá el potencial de la IA",
+      "introDescription": "Conocé cómo Qiu Automations transforma negocios con soluciones que integran IA y automatización para hacer tus procesos más rápidos, confiables y escalables.",
       "items": [
         {
           "title": "Automatización de Leads",
-          "description": "Placeholder: calificación de leads, seguimiento y agendado con agentes de IA para aumentar la conversión sin fricción."
+          "description": "Calificación, seguimiento y agendado de prospectos con agentes de IA que aumentan la conversión sin esfuerzo extra."
         },
         {
-          "title": "Automatización de Base de Conocimientos",
-          "description": "Placeholder: agentes RAG que extraen respuestas en tiempo real desde manuales, SOPs y FAQs con precisión."
+          "title": "Automatización de Conocimiento",
+          "description": "Agentes que responden en tiempo real usando tus manuales, SOPs o FAQs, asegurando precisión en cada interacción."
         },
         {
-          "title": "Asistentes para Atención al Cliente",
-          "description": "Placeholder: soporte 24/7 con bots contextuales que resuelven dudas y escalan cuando hace falta."
+          "title": "Asistentes de Atención al Cliente",
+          "description": "Soporte inteligente disponible 24/7, capaz de resolver consultas y escalar al equipo cuando sea necesario."
+        }
+      ],
+      "cta": "Solicita nuestros servicios"
+    },
+    "process": {
+      "title": "Proceso",
+      "introTitle": "Metodología clara, resultados seguros",
+      "introDescription": "Trabajamos con un proceso probado que garantiza orden, transparencia y entregas efectivas en cada proyecto.",
+      "items": [
+        {
+          "title": "Planificación",
+          "description": "Relevamos necesidades, definimos objetivos y diseñamos una hoja de ruta para la implementación."
+        },
+        {
+          "title": "Diseño",
+          "description": "Armamos la arquitectura y los flujos con un enfoque centrado en la experiencia del usuario."
+        },
+        {
+          "title": "Implementación",
+          "description": "Desarrollo, pruebas y puesta en marcha de las automatizaciones en entornos productivos."
+        },
+        {
+          "title": "Mantenimiento",
+          "description": "Monitoreo constante, ajustes y mejoras continuas para mantener la eficiencia y escalar cuando sea necesario."
         }
       ],
       "cta": "Solicita nuestros servicios"
@@ -62,46 +86,70 @@
       "lang": "EN"
     },
     "hero": {
-      "title_strong": "Automate processes/",
-      "title_light": "Lead the market",
-      "subtitle": "Transform your business with process automation,\nwith AI automations that work for you.",
+      "title_strong": "Automate your workflows/",
+      "title_light": "Boost your business",
+      "subtitle": "Take your company further with AI-powered automations that work for you and free up your team’s time.",
       "cta": "Request our services"
     },
     "benefits": {
       "title": "Benefits",
-      "subtitleTitle": "Optimize, Accelerate and Automate",
-      "subtitleDescription": "Reduce operational costs and remove repetitive tasks with intelligent solutions that improve efficiency and accuracy across every process.",
+      "subtitleTitle": "Efficiency, Scalability and Accuracy",
+      "subtitleDescription": "Cut costs, eliminate manual tasks and boost productivity with intelligent solutions that optimize every stage of your operations.",
       "items": [
         {
-          "title": "Reduced Manual Work",
-          "description": "Automate repetitive tasks and save time. From customer replies to documents: AI handles it so your team can focus on what matters."
+          "title": "Less Operational Load",
+          "description": "Delegate repetitive tasks to AI: from customer replies to document handling, so your team can focus on strategy."
         },
         {
-          "title": "Higher Operational Speed",
-          "description": "Answers in seconds and real‑time decisions. Remove bottlenecks with automated flows and agents that work 24/7."
+          "title": "Faster Processes",
+          "description": "Instant decisions and nonstop workflows. Automations that remove bottlenecks and run around the clock."
         },
         {
-          "title": "Fewer Human Errors",
-          "description": "More accurate, standardized decisions. Automation means fewer mistakes, less rework, and higher quality in every process."
+          "title": "Greater Accuracy",
+          "description": "Reduce human error and improve quality. Standardized, reliable processes for better outcomes."
         }
       ]
     },
     "services": {
       "title": "Services",
-      "introTitle": "Unleash AI Power",
-      "introDescription": "Placeholder text: discover how Qiu Automations can transform your operations with solutions that optimize, accelerate and automate your processes.",
+      "introTitle": "Unleash the Power of AI",
+      "introDescription": "Discover how Qiu Automations helps businesses accelerate and scale with intelligent automation solutions tailored to your needs.",
       "items": [
         {
           "title": "Lead Automation",
-          "description": "Placeholder: lead scoring, follow-ups and scheduling with AI agents to lift conversion without friction."
+          "description": "Qualification, follow-ups and scheduling managed by AI agents that boost conversion without extra effort."
         },
         {
           "title": "Knowledge Base Automation",
-          "description": "Placeholder: RAG agents that extract precise answers from manuals, SOPs and FAQs in real time."
+          "description": "Agents that deliver real-time, precise answers using your manuals, SOPs or FAQs."
         },
         {
           "title": "Customer Support Assistants",
-          "description": "Placeholder: 24/7 contextual bots that resolve queries and escalate when needed."
+          "description": "Smart support available 24/7, able to resolve issues and escalate when necessary."
+        }
+      ],
+      "cta": "Request our services"
+    },
+    "process": {
+      "title": "Our Process",
+      "introTitle": "Clear Steps, Reliable Outcomes",
+      "introDescription": "We follow a proven framework that ensures clarity, transparency and effective delivery on every project.",
+      "items": [
+        {
+          "title": "Planning",
+          "description": "We gather requirements, define goals and design a roadmap for implementation."
+        },
+        {
+          "title": "Design",
+          "description": "We build architectures and flows with a user-centered design approach."
+        },
+        {
+          "title": "Implementation",
+          "description": "Development, testing and deployment of automations into production environments."
+        },
+        {
+          "title": "Maintenance",
+          "description": "Ongoing monitoring, fine-tuning and continuous improvements to ensure scalability and efficiency."
         }
       ],
       "cta": "Request our services"
