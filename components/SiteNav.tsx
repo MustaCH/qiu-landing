@@ -21,6 +21,9 @@ export default function SiteNav() {
           {lang === "es" ? "EN" : "ES"}
         </button>
       </div>
+      <a href="#" className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-30">
+        <img className="w-12" src="/Isotipoblanco.svg" alt="Isotipo" />
+      </a>
       <div className="flex items-center justify-center bg-black/30 backdrop-blur-sm rounded-xl p-2">
         <GooeyNav items={items} />
       </div>

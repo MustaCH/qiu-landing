@@ -33,9 +33,7 @@ export default function RootLayout({
         className={`${roboto.variable} ${geistMono.variable} antialiased`}
       >
         <LanguageProvider>
-          {/* Fondo a pantalla completa detrás del contenido */}
           <BackgroundPrismatic />
-          {/* Navbar global */}
           <SiteNav />
           <div className="relative z-10">{children}</div>
         </LanguageProvider>

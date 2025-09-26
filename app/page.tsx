@@ -3,8 +3,8 @@
 import { useI18n } from "../lib/LanguageProvider";
 import BenefitCard from "../components/BenefitCard";
 import PixelBlast from "../components/PixelBlast";
-import Aurora from "../components/Aurora.jsx";
 import ServiceCard from "../components/ServiceCard";
+import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
 
 export default function Home() {
   const { dict } = useI18n();
@@ -12,11 +12,11 @@ export default function Home() {
     <div>
       <main className="h-screen w-full flex flex-col items-center justify-center">
         <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center text-white">
-          <h2 className="text-8xl font-bold">Qiu.</h2>
+          <img className="w-64" src="/Isologotipoblanco.svg" alt="Isotipo" />
           <h1 className="text-3xl md:text-4xl font-semibold text-center">{dict.hero.title_strong}<span className="font-thin">{dict.hero.title_light}</span></h1>
           <p className="text-sm md:text-xl text-center" dangerouslySetInnerHTML={{ __html: dict.hero.subtitle.replace(/\n/g, '<br />') }} />
           <button
-            className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer"
+            className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_18px_6px_rgba(255,255,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer"
           >
             {dict.hero.cta}
           </button>
@@ -30,17 +30,16 @@ export default function Home() {
               className="opacity-100"
               color="#7dd3fc"
               variant="circle"
-              pixelSize={5}
-              patternScale={4}
-              patternDensity={1}
+              pixelSize={6} // Increased pixel size to reduce workload
+              patternScale={4} // Reduced pattern scale to reduce workload
+              patternDensity={1} // Reduced pattern density to reduce workload
               enableRipples={false}
-              edgeFade={0.5}
+              edgeFade={0.65}
               transparent={true}
-              speed={0.5}
+              speed={0.2}
               style={{}}
             />
           </div>
-          {/* Glow del borde */}
           <div
             className="pointer-events-none absolute inset-0 rounded-2xl z-[5]"
             style={{
@@ -59,7 +58,7 @@ export default function Home() {
             <p className="text-4xl text-center text-white">{dict.benefits?.subtitleTitle ?? ""}</p>
             <p className="text-xl text-center text-white">{dict.benefits?.subtitleDescription ?? ""}</p>
           </div>
-          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-3">
             {dict.benefits.items.map((b, i) => (
               <BenefitCard
                 key={i}
@@ -76,7 +75,7 @@ export default function Home() {
         <div className="absolute top-[-10rem] h-[65rem] z-20 w-full bg-radial from-cyan-500/50 via-transparent to-transparent rounded-full animate-[pulse_6s_ease-in-out_infinite]"/>
         <div className="absolute top-[-12px] z-10 w-full h-32 bg-black"/>
         <div className="relative z-50  container px-6 flex flex-col items-center justify-center gap-6">
-          <div className="relative z-30 flex flex-col gap-6 items-center justify-center mb-24 rounded-2xl p-6 ">
+          <div className="relative z-30 flex flex-col gap-6 items-center justify-center mb-8 rounded-2xl p-6 ">
             <h2
               className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
               style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
@@ -86,7 +85,7 @@ export default function Home() {
           <p className="text-3xl font-semibold text-white text-center">{dict.services?.introTitle ?? ""}</p>
           <p className="text-xl text-center text-white">{dict.services?.introDescription ?? ""}</p>
             {/* Grid de servicios */}
-            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 lg:grid-cols-3 w-full">
               {(dict.services?.items ?? []).map((s: any, i: number) => (
                 <ServiceCard
                   key={i}
@@ -99,6 +98,21 @@ export default function Home() {
             <div className="mt-12">
               <button className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.services?.cta}</button>
             </div>
+          </div>
+        </div>
+      </section>
+      <div className="bg-gradient-to-b from-black to-transparent h-24"/>
+      <section id="proceso" className="relative min-h-screen w-full py-12 flex justify-center items-center bg-transparent overflow-hidden">
+        <div className="relative container mx-auto p-6 rounded-2xl overflow-hidden">
+          <div className="relative z-10 flex flex-col gap-6 items-center justify-center mb-24">
+            <h2
+              className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
+              style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
+            >
+              Nuestro proceso
+            </h2>
+            <p className="text-4xl text-center text-white">Un Método Probado para Resultados Garantizados</p>
+            <p className="text-xl text-center text-white">Nuestro proceso de desarrollo de software es un proceso iterativo que implica la planificación, diseño, implementación y mantenimiento de software.</p>
           </div>
         </div>
       </section>
