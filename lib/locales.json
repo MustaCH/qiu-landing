@@ -73,6 +73,8 @@
           "description": "Desarrollo, pruebas y puesta en marcha de las automatizaciones en entornos productivos."
         }
       ],
+      "prevStep": "Anterior",
+      "nextStep": "Siguiente",
       "cta": "Solicita nuestros servicios"
     }
   },
@@ -136,21 +138,22 @@
       "items": [
         {
           "title": "Planning",
+          "img": "/assets/mind.png",
           "description": "We gather requirements, define goals and design a roadmap for implementation."
         },
         {
           "title": "Design",
+          "img": "/assets/laptop.png",
           "description": "We build architectures and flows with a user-centered design approach."
         },
         {
           "title": "Implementation",
+          "img": "/assets/file.png",
           "description": "Development, testing and deployment of automations into production environments."
-        },
-        {
-          "title": "Maintenance",
-          "description": "Ongoing monitoring, fine-tuning and continuous improvements to ensure scalability and efficiency."
         }
       ],
+      "prevStep": "Previous",
+      "nextStep": "Next",
       "cta": "Request our services"
     }
   }

@@ -146,8 +146,8 @@ export default function Home() {
                 console.log(step);
               }}
               onFinalStepCompleted={() => console.log("All steps completed!")}
-              backButtonText="Anterior"
-              nextButtonText="Siguiente"
+              backButtonText={dict.process.prevStep}
+              nextButtonText={dict.process.nextStep}
               stepCircleContainerClassName="bg-black"
             >
                {dict.process.items.map((b, i) => (
