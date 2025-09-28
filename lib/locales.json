@@ -76,6 +76,39 @@
       "prevStep": "Anterior",
       "nextStep": "Siguiente",
       "cta": "Solicita nuestros servicios"
+    },
+    "contact": {
+      "title": "Solicita nuestros servicios",
+      "subtitle": "Cambia tu negocio hoy",
+      "introDescription": "Descubre cómo podemos ayudarte a llevar tu negocio al siguiente nivel",
+      "form": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre"
+        },
+        "empresa": {
+          "label": "Empresa",
+          "placeholder": "Nombre de tu empresa o proyecto"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Tu correo electrónico de contacto"
+        },
+        "presupuesto": {
+          "label": "Presupuesto",
+          "placeholder": "Elige tu rango de inversión...",
+          "options": {
+            "opt1": "$2000 - $3000",
+            "opt2": "$3000 - $4000",
+            "opt3": "$4000 - $5000"
+          }
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Compartenos algunos detalles sobre tu idea, cuanto más detalles, podemos ayudarte mejor."
+        },
+        "submit": "Solicitar oferta"
+      }
     }
   },
   "en": {
@@ -155,6 +188,39 @@
       "prevStep": "Previous",
       "nextStep": "Next",
       "cta": "Request our services"
+    },
+    "contact": {
+      "title": "Request out services",
+      "subtitle": "Change your business today",
+      "introDescription": "Discover how we can help you take your business to the next level",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "empresa": {
+          "label": "Company",
+          "placeholder": "Company name or project"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your contact email"
+        },
+        "presupuesto": {
+          "label": "Budget",
+          "placeholder": "Choose your investment range...",
+          "options": {
+            "opt1": "$2000 - $3000",
+            "opt2": "$3000 - $4000",
+            "opt3": "$4000 - $5000"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Share some details about your idea, the more details, the better we can help you."
+        },
+        "submit": "Request offer"
+      }
     }
   }
 }

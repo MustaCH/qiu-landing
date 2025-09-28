@@ -4,7 +4,6 @@ import { useI18n } from "../lib/LanguageProvider";
 import BenefitCard from "../components/BenefitCard";
 import PixelBlast from "../components/PixelBlast";
 import ServiceCard from "../components/ServiceCard";
-import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
 import Stepper, { Step } from "@/components/Stepper";
 
 export default function Home() {
@@ -31,9 +30,9 @@ export default function Home() {
               className="opacity-100"
               color="#7dd3fc"
               variant="circle"
-              pixelSize={6} // Increased pixel size to reduce workload
-              patternScale={4} // Reduced pattern scale to reduce workload
-              patternDensity={1} // Reduced pattern density to reduce workload
+              pixelSize={6} 
+              patternScale={4} 
+              patternDensity={1} 
               enableRipples={false}
               edgeFade={0.65}
               transparent={true}
@@ -162,6 +161,55 @@ export default function Home() {
               </Step>
             ))}
             </Stepper>
+          </div>
+        </div>
+      </section>
+      <section id="contacto">
+        <div className="bg-gradient-to-b from-black to-transparent h-24"/>
+        <div className="relative container mx-auto p-6 rounded-2xl">
+          <div className="relative max-w-2xl mx-auto z-10 flex flex-col gap-6 items-center justify-center mb-4">
+            <h2
+              className="relative text-sm md:text-md font-thin tracking-wider uppercase text-white text-center px-3 py-1 rounded-xl bg-black/40 backdrop-blur-xl border border-[#7dd3fc]/40 shadow-[0_0_24px_8px_rgba(125,211,252,0.25)]"
+              style={{ textShadow: "0 0 10px rgba(255,255,255,0.35)" }}
+            >
+              {dict.contact.title}
+            </h2>
+            <p className="text-4xl text-center text-white">
+              {dict.contact.subtitle}
+            </p>
+            <p className="text-xl text-center text-white">
+              {dict.contact.introDescription}
+            </p>
+          </div>
+          <div className="bg-black/80 p-6 rounded-2xl max-w-xl mx-auto">
+            <form className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2 text-white ">
+                <label htmlFor="name">{dict.contact.form.name.label}</label>
+                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.name.placeholder} />
+              </div>
+              <div className="flex flex-col gap-2 text-white ">
+                <label htmlFor="empresa">{dict.contact.form.empresa.label}</label>
+                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.empresa.placeholder} />
+              </div>
+              <div className="flex flex-col gap-2 text-white ">
+                <label htmlFor="email">{dict.contact.form.email.label}</label>
+                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.email.placeholder} />
+              </div>
+              <div className="flex flex-col gap-2 text-white ">
+                <label htmlFor="presupuesto">{dict.contact.form.presupuesto.label}</label>
+                <select className="border-2 border-[#7dd3fc] p-2 rounded-xl">
+                  <option value="">{dict.contact.form.presupuesto.placeholder}</option>
+                  <option value="opt-1">{dict.contact.form.presupuesto.options.opt1}</option>
+                  <option value="opt-2">{dict.contact.form.presupuesto.options.opt2}</option>
+                  <option value="opt-3">{dict.contact.form.presupuesto.options.opt3}</option>
+                </select>
+              </div>
+              <div className="flex flex-col gap-2 text-white ">
+                <label htmlFor="message">{dict.contact.form.message.label}</label>
+                <textarea className="border-2 border-[#7dd3fc] p-2 rounded-xl" placeholder={dict.contact.form.message.placeholder}></textarea>
+              </div>
+              <button type="submit" className="bg-white text-black font-semibold px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.contact.form.submit}</button>
+            </form>
           </div>
         </div>
       </section>

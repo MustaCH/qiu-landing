@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const title = "Qiu Automations | Automatización inteligente para tu empresa";
 const description =
   "Consultora de automatización de procesos con IA: diseñamos chatbots, agentes y flujos integrados para escalar operaciones, captar leads y mejorar la experiencia del cliente.";
-const shareImage = "https://qiuautomations.com/assets/qiu-automations-og.png";
+const shareImage = "/og-qiu.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://qiuautomations.com"),
