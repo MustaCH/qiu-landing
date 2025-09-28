@@ -17,9 +17,52 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Qiu Automations | Automatización inteligente para tu empresa";
+const description =
+  "Consultora de automatización de procesos con IA: diseñamos chatbots, agentes y flujos integrados para escalar operaciones, captar leads y mejorar la experiencia del cliente.";
+const shareImage = "https://qiuautomations.com/assets/qiu-automations-og.png";
+
 export const metadata: Metadata = {
-  title: "Qiu Automations",
-  description: "Transformá tu negocio con la automatización de procesos, con automatizaciones IA que trabajan por ti.",  
+  metadataBase: new URL("https://qiuautomations.com"),
+  title,
+  description,
+  keywords: [
+    "automatización de procesos",
+    "automatizaciones con IA",
+    "agentes inteligentes",
+    "chatbots para empresas",
+    "consultoría de automatización",
+    "Qiu Automations",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title,
+    description,
+    url: "https://qiuautomations.com/",
+    siteName: "Qiu Automations",
+    locale: "es_AR",
+    type: "website",
+    images: [
+      {
+        url: shareImage,
+        width: 1200,
+        height: 630,
+        alt: "Qiu Automations automatiza procesos con IA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [shareImage],
+  },
 };
 
 export default function RootLayout({
