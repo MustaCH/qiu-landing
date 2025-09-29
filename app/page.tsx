@@ -41,11 +41,11 @@ export default function Home() {
           <img className="w-64" src="/Isologotipoblanco.svg" alt="Isotipo" />
           <h1 className="text-3xl md:text-4xl font-semibold text-center">{dict.hero.title_strong}<span className="font-thin">{dict.hero.title_light}</span></h1>
           <p className="text-sm md:text-xl text-center" dangerouslySetInnerHTML={{ __html: dict.hero.subtitle.replace(/\n/g, '<br />') }} />
-          <button
+          <a href="#contacto"
             className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_18px_6px_rgba(255,255,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer"
           >
             {dict.hero.cta}
-          </button>
+          </a>
         </div>
       </main>
       <section id="beneficios" className="relative min-h-screen w-full pt-24 pb-12 bg-gradient-to-t from-black via-black to-transparent overflow-hidden">
@@ -124,7 +124,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12">
-              <button className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.services?.cta}</button>
+              <a href="#contacto" className="bg-white font-semibold text-black px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.services?.cta}</a>
             </div>
           </div>
         </div>
@@ -170,7 +170,9 @@ export default function Home() {
               onStepChange={(step) => {
                 console.log(step);
               }}
-              onFinalStepCompleted={() => console.log("All steps completed!")}
+              onFinalStepCompleted={() => {
+                window.location.hash = "#contacto";   // cambia la URL y hace scroll
+              }}              
               backButtonText={dict.process.prevStep}
               nextButtonText={dict.process.nextStep}
               stepCircleContainerClassName="bg-black"
