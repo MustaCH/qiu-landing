@@ -5,9 +5,35 @@ import BenefitCard from "../components/BenefitCard";
 import PixelBlast from "../components/PixelBlast";
 import ServiceCard from "../components/ServiceCard";
 import Stepper, { Step } from "@/components/Stepper";
+import { useState } from "react";
 
 export default function Home() {
   const { dict } = useI18n();
+  const [status, setStatus] = useState<"idle"|"sending"|"ok"|"error">("idle");
+  const WEBHOOK = "https://qiuadminplatform.space/webhook/qiu-formulario";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();                // <- evita la redirección
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);   // respeta el formato que ya acepta tu webhook
+
+    try {
+      const res = await fetch(WEBHOOK, {
+        method: "POST",
+        body: data,                     // no seteés Content-Type manualmente
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus("ok");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
   return (
     <div>
       <main className="h-screen w-full flex flex-col items-center justify-center">
@@ -181,38 +207,74 @@ export default function Home() {
               {dict.contact.introDescription}
             </p>
           </div>
-          <div className="bg-black/80 p-6 rounded-2xl max-w-xl mx-auto">
-            <form className="flex flex-col gap-6">
+          <div className="bg-black/80 backdrop-blur-xl p-6 rounded-2xl max-w-xl mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="name">{dict.contact.form.name.label}</label>
-                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.name.placeholder} />
+                <input name="name" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.name.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="empresa">{dict.contact.form.empresa.label}</label>
-                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.empresa.placeholder} />
+                <input name="empresa" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.empresa.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="email">{dict.contact.form.email.label}</label>
-                <input className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.email.placeholder} />
+                <input name="email" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="email" placeholder={dict.contact.form.email.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="presupuesto">{dict.contact.form.presupuesto.label}</label>
-                <select className="border-2 border-[#7dd3fc] p-2 rounded-xl">
-                  <option value="">{dict.contact.form.presupuesto.placeholder}</option>
-                  <option value="opt-1">{dict.contact.form.presupuesto.options.opt1}</option>
-                  <option value="opt-2">{dict.contact.form.presupuesto.options.opt2}</option>
-                  <option value="opt-3">{dict.contact.form.presupuesto.options.opt3}</option>
+                <select name="presupuesto" className="border-2 border-[#7dd3fc] p-2 rounded-xl">
+                  <option className="bg-black text-white" value="">{dict.contact.form.presupuesto.placeholder}</option>
+                  <option className="bg-black text-white" value={dict.contact.form.presupuesto.options.opt1}>{dict.contact.form.presupuesto.options.opt1}</option>
+                  <option className="bg-black text-white" value={dict.contact.form.presupuesto.options.opt2}>{dict.contact.form.presupuesto.options.opt2}</option>
+                  <option className="bg-black text-white" value={dict.contact.form.presupuesto.options.opt3}>{dict.contact.form.presupuesto.options.opt3}</option>
                 </select>
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="message">{dict.contact.form.message.label}</label>
-                <textarea className="border-2 border-[#7dd3fc] p-2 rounded-xl" placeholder={dict.contact.form.message.placeholder}></textarea>
+                <textarea name="message" className="border-2 border-[#7dd3fc] p-2 rounded-xl" placeholder={dict.contact.form.message.placeholder}></textarea>
               </div>
-              <button type="submit" className="bg-white text-black font-semibold px-6 py-2 rounded-full transition-shadow duration-300 hover:shadow-[0_0_30px_10px_rgba(255,255,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 cursor-pointer">{dict.contact.form.submit}</button>
+              <button
+                type="submit"
+                disabled={status==="sending"}
+                className="bg-white text-black font-semibold px-6 py-2 rounded-full"
+              >
+                {status==="sending" ? "Enviando..." : dict.contact.form.submit}
+              </button>
+
+              {status==="ok" && (
+                <p className="text-green-400 mt-2 text-center">¡Gracias! Te responderé a la brevedad.</p>
+              )}
+              {status==="error" && (
+                <p className="text-red-400 mt-2 text-center">Hubo un problema. Probá de nuevo.</p>
+              )}            
             </form>
           </div>
         </div>
       </section>
+      <footer className="bg-black">
+        <div className="container mx-auto p-6">
+          <div className="flex flex-row gap-6 items-center justify-between">
+            <img className="w-24" src="/isologotipoblanco.png" alt="" />
+            <div className="flex flex-col md:flex-row gap-8">
+              <ul className="flex flex-col gap-1 text-white font-semibold">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+              </ul>
+              <div className="text-white">
+                <h4 className="font-semibold">Social</h4>
+                <a href="https://www.linkedin.com/company/qiu-automations/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <hr className="my-6"/>
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-center md:justify-evenly">
+            <p className="text-white text-center">Qiu automations. Todos los derechos reservados © {new Date().getFullYear()}</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
