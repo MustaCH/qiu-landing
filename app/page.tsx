@@ -27,6 +27,11 @@ export default function Home() {
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus("ok");
+      if (typeof window !== "undefined") {
+        const url = new URL(window.location.href);
+        url.searchParams.set("form_submitted", "1");
+        window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+      }
       form.reset();
     } catch (err) {
       console.error(err);
