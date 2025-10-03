@@ -213,15 +213,15 @@ export default function Home() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="name">{dict.contact.form.name.label}</label>
-                <input name="name" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.name.placeholder} />
+                <input required name="name" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.name.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="empresa">{dict.contact.form.empresa.label}</label>
-                <input name="empresa" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.empresa.placeholder} />
+                <input required name="empresa" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="text" placeholder={dict.contact.form.empresa.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="email">{dict.contact.form.email.label}</label>
-                <input name="email" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="email" placeholder={dict.contact.form.email.placeholder} />
+                <input required name="email" className="border-2 border-[#7dd3fc] p-2 rounded-xl" type="email" placeholder={dict.contact.form.email.placeholder} />
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="presupuesto">{dict.contact.form.presupuesto.label}</label>
@@ -234,7 +234,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2 text-white ">
                 <label htmlFor="message">{dict.contact.form.message.label}</label>
-                <textarea name="message" className="border-2 border-[#7dd3fc] p-2 rounded-xl" placeholder={dict.contact.form.message.placeholder}></textarea>
+                <textarea required name="message" className="border-2 border-[#7dd3fc] p-2 rounded-xl" placeholder={dict.contact.form.message.placeholder}></textarea>
               </div>
               <button
                 type="submit"
